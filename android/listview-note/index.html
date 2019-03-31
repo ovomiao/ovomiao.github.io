@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="一只夜喵纸的学习笔记">
-<meta name="keywords" content="Java, Android, Kotlin, 云笔记">
-<meta property="og:type" content="website">
+  <meta name="description" content="Displays a vertically-scrollable collection of views, where each view is positioned immediately below the previous view in the list. -- 官方文档  【怎么用】：ListView的使用可以分为三步。第一步获取数据源，第二步实例化适配器，第三步为ListView设置">
+<meta name="keywords" content="android ListView">
+<meta property="og:type" content="article">
 <meta property="og:title" content="你的花喵">
-<meta property="og:url" content="http://ovomiao.com/index.html">
+<meta property="og:url" content="http://ovomiao.com/android/listview-note/index.html">
 <meta property="og:site_name" content="你的花喵">
-<meta property="og:description" content="一只夜喵纸的学习笔记">
+<meta property="og:description" content="Displays a vertically-scrollable collection of views, where each view is positioned immediately below the previous view in the list. -- 官方文档  【怎么用】：ListView的使用可以分为三步。第一步获取数据源，第二步实例化适配器，第三步为ListView设置">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-31T10:07:46.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你的花喵">
-<meta name="twitter:description" content="一只夜喵纸的学习笔记">
+<meta name="twitter:description" content="Displays a vertically-scrollable collection of views, where each view is positioned immediately below the previous view in the list. -- 官方文档  【怎么用】：ListView的使用可以分为三步。第一步获取数据源，第二步实例化适配器，第三步为ListView设置">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://ovomiao.com/">
+  <link rel="canonical" href="http://ovomiao.com/android/listview-note/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>你的花喵</title>
+  <title> | 你的花喵</title>
   
 
 
@@ -172,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -215,7 +215,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -294,9 +294,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -329,9 +329,7 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/android/listview-note/" class="post-title-link" itemprop="url">未命名</a>
+
               
             
           </h1>
@@ -425,9 +423,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>Displays a vertically-scrollable collection of views, where each view is positioned immediately below the previous view in the list. -- <a href="https://developer.android.com/reference/android/widget/ListView" target="_blank" rel="noopener">官方文档</a></p>
 </blockquote>
 <p><strong>【怎么用】：ListView的使用可以分为三步。第一步获取数据源，第二步实例化适配器，第三步为ListView设置适配器</strong></p>
@@ -490,8 +486,6 @@
 <p><em>java代码</em></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="comment">//数据</span></span><br><span class="line">    <span class="keyword">private</span> String[] mDatas = &#123;</span><br><span class="line">            <span class="string">"GTA V"</span>, <span class="string">"三男一狗"</span>, <span class="string">"Grand Theft Auto V"</span>,</span><br><span class="line">            <span class="string">"洛城诛仙记"</span>, <span class="string">"我怎么又被封号了"</span>, <span class="string">"侠盗飞车5"</span>,</span><br><span class="line">            <span class="string">"牛顿的眼泪5"</span>, <span class="string">"三傻宝大闹洛圣都"</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        <span class="keyword">final</span> ListView listView = findViewById(R.id.listView);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 实例化适配器</span></span><br><span class="line"><span class="comment">         * 参数：Context item样式 数据</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        ArrayAdapter&lt;String&gt; adapter = <span class="keyword">new</span> ArrayAdapter&lt;&gt;(<span class="keyword">this</span>,</span><br><span class="line">                android.R.layout.simple_list_item_1, mDatas);</span><br><span class="line">        <span class="comment">//设置适配器</span></span><br><span class="line">        listView.setAdapter(adapter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
@@ -512,14 +506,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/android-ListView/" rel="tag"># android ListView</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -529,14 +529,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -556,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -633,6 +643,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-ListView的XML属性"><span class="nav-number">1.</span> <span class="nav-text">1.ListView的XML属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ListView常用方法"><span class="nav-number">2.</span> <span class="nav-text">2.ListView常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ListView的使用"><span class="nav-number">3.</span> <span class="nav-text">3.ListView的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-使用ArrayAdapter加载数据"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 使用ArrayAdapter加载数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -761,6 +788,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -776,6 +807,8 @@
 
   
 
+
+  
 
 
   
